@@ -187,6 +187,7 @@
 		qcom,csid-sd-index = <1>;
 		qcom,mount-angle = <270>;
 		qcom,sensor-name = "ov13850_front";
+		qcom,b3-image = <1>;   /*set as 1 after XC board*/
 		cam_vdig-supply = <&pm8994_gpios 7 0>;
 		cam_vio-supply = <&pm8994_lvs1>;
 		cam_vana-supply = <&pm8994_gpios 6 0>;
@@ -203,14 +204,17 @@
 		gpios = <&msm_gpio 14 0>,
 			<&msm_gpio 105 0>,
 			<&pm8994_gpios 6 0>,
-			<&pm8994_gpios 7 0>;
+			<&pm8994_gpios 7 0>,
+			<&msm_gpio 107 0>;
 		qcom,gpio-reset = <1>;
-		qcom,gpio-req-tbl-num = <0 1 2 3>;
-		qcom,gpio-req-tbl-flags = <1 0 0 0>;
+		qcom,gpio-standby = <4>;
+		qcom,gpio-req-tbl-num = <0 1 2 3 4>;
+		qcom,gpio-req-tbl-flags = <1 0 0 0 0>;
 		qcom,gpio-req-tbl-label = "CAM_MCLK1",
 					  "CAM_RESET1",
 					  "CAM2_A2V9_EN",
-					  "CAM2_D1V2_EN";
+					  "CAM2_D1V2_EN",
+					  "SUB_A2V9_EN";
 
 		qcom,csi-lane-assign = <0x4320>;
 		qcom,csi-lane-mask = <0x1F>;
@@ -232,6 +236,7 @@
 		qcom,csid-sd-index = <1>;
 		qcom,mount-angle = <270>;
 		qcom,sensor-name = "ov4688_front";
+		qcom,b3-image = <1>;   /*set as 1 after XC board*/
 		cam_vdig-supply = <&pm8994_gpios 7 0>;
 		cam_vio-supply = <&pm8994_lvs1>;
 		cam_vana-supply = <&pm8994_gpios 6 0>;
@@ -248,14 +253,17 @@
 		gpios = <&msm_gpio 14 0>,
 			<&msm_gpio 105 0>,
 			<&pm8994_gpios 6 0>,
-			<&pm8994_gpios 7 0>;
+			<&pm8994_gpios 7 0>,
+			<&msm_gpio 107 0>;
 		qcom,gpio-reset = <1>;
-		qcom,gpio-req-tbl-num = <0 1 2 3>;
-		qcom,gpio-req-tbl-flags = <1 0 0 0>;
+		qcom,gpio-standby = <4>;
+		qcom,gpio-req-tbl-num = <0 1 2 3 4>;
+		qcom,gpio-req-tbl-flags = <1 0 0 0 0>;
 		qcom,gpio-req-tbl-label = "CAM_MCLK1",
 					  "CAM_RESET1",
 					  "CAM2_A2V9_EN",
-					  "CAM2_D1V2_EN";
+					  "CAM2_D1V2_EN",
+					  "SUB_A2V9_EN";
 
 		qcom,csi-lane-assign = <0x4320>;
 		qcom,csi-lane-mask = <0x1F>;
@@ -277,9 +285,10 @@
 		qcom,csid-sd-index = <2>;
 		qcom,mount-angle = <270>;
 		qcom,sensor-name = "ov2722_subcam";
+		qcom,b3-image = <1>;   /*set as 1 after XC board*/
 		cam_vdig-supply = <&pm8994_gpios 7 0>;
 		cam_vio-supply = <&pm8994_lvs1>;
-		cam_vana-supply = <&pm8994_gpios 6 0>;
+		cam_vana-supply = <&msm_gpio 107 0>;
 		qcom,cam-vreg-name = "cam_vdig", "cam_vio", "cam_vana";
 		qcom,cam-vreg-type = <2 0 2>;
 		qcom,cam-vreg-min-voltage = <0 0 0>;
@@ -292,15 +301,18 @@
 		pinctrl-1 = <&cam_sensor_mclk2_suspend &cam_sensor_rear2_suspend>;
 		gpios =  <&msm_gpio 15 0>,
 			<&msm_gpio 109 0>,
-			<&pm8994_gpios 6 0>,
-			<&pm8994_gpios 7 0>;
+			<&msm_gpio 107 0>,
+			<&pm8994_gpios 7 0>,
+			<&pm8994_gpios 6 0>;
 		qcom,gpio-reset = <1>;
-		qcom,gpio-req-tbl-num = <0 1 2 3>;
-		qcom,gpio-req-tbl-flags = <1 0 0 0>;
+		qcom,gpio-standby = <4>;
+		qcom,gpio-req-tbl-num = <0 1 2 3 4>;
+		qcom,gpio-req-tbl-flags = <1 0 0 0 0>;
 		qcom,gpio-req-tbl-label = "CAM_MCLK2",
 					  "CAM_RESET2",
 					  "CAM2_A2V9_EN",
-					  "CAM2_D1V2_EN";
+					  "CAM2_D1V2_EN",
+					  "FRONT_A2V9_EN";
 
 		qcom,csi-lane-assign = <0x4320>;
 		qcom,csi-lane-mask = <0x3>;
